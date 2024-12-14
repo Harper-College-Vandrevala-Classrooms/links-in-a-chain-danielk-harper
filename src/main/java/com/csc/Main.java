@@ -5,15 +5,15 @@ import java.lang.*;
 public class Main {
   public static void main(String[] args) {
     ChainLink linkOne = new ChainLink("red");
-    Node nodeOne = new Node(linkOne);
+    Node<ChainLink> nodeOne = new Node<ChainLink>(linkOne);
 
     ChainLink linkTwo = new ChainLink("blue");
-    Node nodeTwo = new Node(linkTwo, nodeOne);
+    Node<ChainLink> nodeTwo = new Node<ChainLink>(linkTwo, nodeOne);
 
     ChainLink linkThree = new ChainLink("green");
-    Node nodeThree = new Node(linkThree, nodeTwo);
+    Node<ChainLink> nodeThree = new Node<ChainLink>(linkThree, nodeTwo);
     
-    Node cur_node = nodeOne;
+    Node<ChainLink> cur_node = nodeOne;
     
     while (cur_node != null) {
       System.out.println(cur_node.data().color);
